@@ -7,7 +7,7 @@ import { customerPortalAction } from '@/lib/payments/actions';
 import { useActionState } from 'react';
 import { TeamDataWithMembers, User } from '@/lib/db/schema';
 import { removeTeamMember } from '@/app/(login)/actions';
-import { InviteTeamMember } from './invite-team';
+import { InviteFamilyMember } from './invite-family';
 
 type ActionState = {
   error?: string;
@@ -26,10 +26,10 @@ export function Settings({ teamData }: { teamData: TeamDataWithMembers }) {
 
   return (
     <section className="flex-1 p-4 lg:p-8">
-      <h1 className="text-lg lg:text-2xl font-medium mb-6">Team Settings</h1>
+      <h1 className="text-lg lg:text-2xl font-medium mb-6">Family Settings</h1>
       <Card className="mb-8">
         <CardHeader>
-          <CardTitle>Team Subscription</CardTitle>
+          <CardTitle>Family Subscription</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
@@ -57,7 +57,7 @@ export function Settings({ teamData }: { teamData: TeamDataWithMembers }) {
       </Card>
       <Card className="mb-8">
         <CardHeader>
-          <CardTitle>Team Members</CardTitle>
+          <CardTitle>Family Members</CardTitle>
         </CardHeader>
         <CardContent>
           <ul className="space-y-4">
@@ -106,7 +106,7 @@ export function Settings({ teamData }: { teamData: TeamDataWithMembers }) {
           )}
         </CardContent>
       </Card>
-      <InviteTeamMember />
+      <InviteFamilyMember />
     </section>
   );
 }

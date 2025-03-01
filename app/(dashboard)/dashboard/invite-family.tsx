@@ -21,7 +21,7 @@ type ActionState = {
   success?: string;
 };
 
-export function InviteTeamMember() {
+export function InviteFamilyMember() {
   const { userPromise } = useUser();
   const user = use(userPromise);
   const isOwner = user?.role === 'owner';
@@ -33,7 +33,7 @@ export function InviteTeamMember() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Invite Team Member</CardTitle>
+        <CardTitle>Invite Family Member</CardTitle>
       </CardHeader>
       <CardContent>
         <form action={inviteAction} className="space-y-4">
@@ -94,7 +94,7 @@ export function InviteTeamMember() {
       {!isOwner && (
         <CardFooter>
           <p className="text-sm text-muted-foreground">
-            You must be a team owner to invite new members.
+            You must be a family owner to invite new members.
           </p>
         </CardFooter>
       )}

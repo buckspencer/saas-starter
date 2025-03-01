@@ -56,11 +56,11 @@ function formatAction(action: ActivityType): string {
     case ActivityType.UPDATE_ACCOUNT:
       return 'You updated your account';
     case ActivityType.CREATE_TEAM:
-      return 'You created a new team';
+      return 'You created a new family';
     case ActivityType.REMOVE_TEAM_MEMBER:
-      return 'You removed a team member';
+      return 'You removed a family member';
     case ActivityType.INVITE_TEAM_MEMBER:
-      return 'You invited a team member';
+      return 'You invited a family member';
     case ActivityType.ACCEPT_INVITATION:
       return 'You accepted an invitation';
     default:
