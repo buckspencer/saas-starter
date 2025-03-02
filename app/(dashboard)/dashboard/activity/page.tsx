@@ -9,22 +9,28 @@ import {
   UserMinus,
   Mail,
   CheckCircle,
+  FileText,
+  FileEdit,
+  FileX,
   type LucideIcon,
 } from 'lucide-react';
 import { ActivityType } from '@/lib/db/schema';
-import { getActivityLogs } from '@/lib/db/queries';
+import { getActivityLogs } from '@/lib/db/actions/activity';
 
 const iconMap: Record<ActivityType, LucideIcon> = {
   [ActivityType.SIGN_UP]: UserPlus,
-  [ActivityType.SIGN_IN]: UserCog,
+  [ActivityType.SIGN_IN]: Lock,
   [ActivityType.SIGN_OUT]: LogOut,
   [ActivityType.UPDATE_PASSWORD]: Lock,
   [ActivityType.DELETE_ACCOUNT]: UserMinus,
-  [ActivityType.UPDATE_ACCOUNT]: Settings,
+  [ActivityType.UPDATE_ACCOUNT]: UserCog,
   [ActivityType.CREATE_TEAM]: UserPlus,
   [ActivityType.REMOVE_TEAM_MEMBER]: UserMinus,
   [ActivityType.INVITE_TEAM_MEMBER]: Mail,
   [ActivityType.ACCEPT_INVITATION]: CheckCircle,
+  [ActivityType.CREATE_DOCUMENT]: FileText,
+  [ActivityType.UPDATE_DOCUMENT]: FileEdit,
+  [ActivityType.DELETE_DOCUMENT]: FileX,
 };
 
 function getRelativeTime(date: Date) {
@@ -63,6 +69,12 @@ function formatAction(action: ActivityType): string {
       return 'You invited a family member';
     case ActivityType.ACCEPT_INVITATION:
       return 'You accepted an invitation';
+    case ActivityType.CREATE_DOCUMENT:
+      return 'You created a new document';
+    case ActivityType.UPDATE_DOCUMENT:
+      return 'You updated a document';
+    case ActivityType.DELETE_DOCUMENT:
+      return 'You deleted a document';
     default:
       return 'Unknown action occurred';
   }

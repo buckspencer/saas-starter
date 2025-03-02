@@ -39,13 +39,13 @@ function Header() {
             href="/pricing"
             className="text-sm font-medium text-gray-700 hover:text-gray-900"
           >
-            Pricing
+            Upgrade Account
           </Link>
           <Link
             href="/sample-dashboard"
             className="text-sm font-medium text-gray-700 hover:text-gray-900"
           >
-            Sample Dashboard
+            Family Summary
           </Link>
           {user ? (
             <DropdownMenu open={isMenuOpen} onOpenChange={setIsMenuOpen}>

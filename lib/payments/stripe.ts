@@ -1,11 +1,8 @@
 import Stripe from 'stripe';
 import { redirect } from 'next/navigation';
 import { Team } from '@/lib/db/schema';
-import {
-  getTeamByStripeCustomerId,
-  getUser,
-  updateTeamSubscription
-} from '@/lib/db/queries';
+import { getTeamByStripeCustomerId, updateTeamSubscription} from '@/lib/db/actions/teams';
+import { getUser } from '@/lib/db/actions/users';
 
 export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: '2025-01-27.acacia'
