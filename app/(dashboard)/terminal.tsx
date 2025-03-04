@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Copy, Check } from 'lucide-react';
+import React from 'react';
 
 export function Terminal() {
   const [terminalStep, setTerminalStep] = useState(0);
@@ -16,14 +17,13 @@ export function Terminal() {
   ];
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setTerminalStep((prev) =>
-        prev < terminalSteps.length - 1 ? prev + 1 : prev
-      );
-    }, 500);
-
-    return () => clearTimeout(timer);
-  }, [terminalStep]);
+    if (terminalStep < terminalSteps.length) {
+      const timer = setTimeout(() => {
+        setTerminalStep((prev) => prev + 1);
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [terminalStep, terminalSteps.length]);
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(terminalSteps.join('\n'));
