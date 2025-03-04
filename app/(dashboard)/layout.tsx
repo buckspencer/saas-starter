@@ -78,12 +78,21 @@ function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
-            <Button
-              asChild
-              className="bg-black hover:bg-gray-800 text-white text-sm px-4 py-2 rounded-full"
-            >
-              <Link href="/sign-up">Sign Up</Link>
-            </Button>
+            <div className="flex items-center gap-2">
+              <Button
+                asChild
+                className="bg-black hover:bg-gray-800 text-white text-sm px-4 py-2 rounded-md"
+              >
+                <Link href="/sign-in">Sign In</Link>
+              </Button>
+              <Button
+                variant="outline"
+                asChild
+                className="text-sm px-4 py-2 rounded-md"
+              >
+                <Link href="/sign-up">Sign Up</Link>
+              </Button>
+            </div>
           )}
         </div>
       </div>

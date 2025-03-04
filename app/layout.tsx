@@ -5,8 +5,8 @@ import { UserProvider } from '@/lib/auth';
 import { getUser } from '@/lib/db/actions/users';
 
 export const metadata: Metadata = {
-  title: 'Next.js SaaS Starter',
-  description: 'Get started quickly with Next.js, Postgres, and Stripe.',
+  title: 'Family - The Family Office Software for the average family',
+  description: 'Family is the family office software for the average family. It is a simple, easy to use, and affordable solution for managing your family\'s finances.',
 };
 
 export const viewport: Viewport = {
